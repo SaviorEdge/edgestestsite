@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>edgestestsite</title>
+    <link type="text/css" rel="stylesheet" href="../index.css"/>
+    <link rel="icon" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="edgestestsite">
+  <meta itemprop="description" content="Random garbage on the internet">
+  <meta itemprop="image" content="../favicon.png">
+  <meta itemprop="image" content="https://edgestestsite.pages.dev/thumb.jpg">
+
+    <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="edgestestsite">
+  <meta name="twitter:description" content="Random garbage on the internet">
+  <meta name="twitter:image" content="../favicon.png">
+  <meta name="twitter:image" content="https://edgestestsite.pages.dev/thumb.jpg">
+
+</head>
+<body>
+  <ul class="navbar">
+    <li class="navbar-li"><a href="../index.html" class="navbar-li-a">Home</a></li>
+    <li class="navbar-li navbar-about"><a href="../about.html" class="navbar-li-a">About</a></li>
+  </ul>
+  <br /><br />
+  <div class="info">
+    <h1 class="header1">Linux Audio Stuttering Fix</h1>
+    <span class="page-time">posted on: 9/19/2022</span><br />
+    If your Linux audio doing this:<br/>
+    <img src="img/919-pulseaudio-stutter.png" style="max-height: 300px;"><br/>
+    Stuttering every so often? Well then here's a fix. (btw image doesn't mean anything...i just wanted fancy image.)<br/><br/>
+    Open up your terminal, then paste this in:<br /><br />
+    <div class="code2">
+    <div class="code" onclick="copyDivToClipboard" id="a">
+      <pre>sudo nano /etc/pulse/daemon.conf</pre>
+    </div>
+        <div onclick="copyDivToClipboard()"><button class="code-button">Click to copy</button></div></div>
+        <script>
+            function copyDivToClipboard() {
+                var range = document.createRange();
+                range.selectNode(document.getElementById("a"));
+                window.getSelection().removeAllRanges(); // clear current selection
+                window.getSelection().addRange(range); // to select text
+                document.execCommand("copy");
+                window.getSelection().removeAllRanges();// to deselect
+            }
+        </script><br />
+        Then find <span class="simplecode">;realtime-scheduling = yes</span> and underneath it paste this:<br /><br />
+        <div class="code2">
+        <div class="code" onclick="copyDivToClipboard2" id="a2">
+          <pre>realtime-scheduling = no</pre>
+        </div>
+            <div onclick="copyDivToClipboard2()"><button class="code-button">Click to copy</button></div></div>
+            <script>
+                function copyDivToClipboard2() {
+                    var range = document.createRange();
+                    range.selectNode(document.getElementById("a2"));
+                    window.getSelection().removeAllRanges(); // clear current selection
+                    window.getSelection().addRange(range); // to select text
+                    document.execCommand("copy");
+                    window.getSelection().removeAllRanges();// to deselect
+                }
+            </script><br />
+          This is the only way I found to fix it. Ubuntu-based distro (didn't have this issue on Manjaro for the short time i used that).
+          <br/>But it's pulseaudio; who knows.
+      </div>
+  <br /><br />
+  <div class="bottombar">
+    <li class="navbar-li"><a href="../index.html" class="navbar-li-a">Home</a></li>
+  </div>
+ </body>
+ </script>
+</html>

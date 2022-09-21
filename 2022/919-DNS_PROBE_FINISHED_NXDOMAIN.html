@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>edgestestsite</title>
+    <link type="text/css" rel="stylesheet" href="../index.css"/>
+    <link rel="icon" href="../favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="edgestestsite">
+  <meta itemprop="description" content="Random garbage on the internet">
+  <meta itemprop="image" content="../favicon.png">
+  <meta itemprop="image" content="https://edgestestsite.pages.dev/thumb.jpg">
+
+    <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="edgestestsite">
+  <meta name="twitter:description" content="Random garbage on the internet">
+  <meta name="twitter:image" content="../favicon.png">
+  <meta name="twitter:image" content="https://edgestestsite.pages.dev/thumb.jpg">
+
+</head>
+<body>
+  <ul class="navbar">
+    <li class="navbar-li"><a href="../index.html" class="navbar-li-a">Home</a></li>
+    <li class="navbar-li navbar-about"><a href="../about.html" class="navbar-li-a">About</a></li>
+  </ul>
+  <br /><br />
+  <div class="info">
+    <h1 class="header1">How to temporary fix:<br/> This site can’t be reachedCheck if there is a typo in img.lwks.com.
+DNS_PROBE_FINISHED_NXDOMAIN on Linux</h1>
+  <span class="page-time">posted on: 9/19/2022</span><br />
+    When I visited Lightwork's new forum the avatars weren't loading. I right clicked and open the image in a new tab. Then I got this.
+    <br /><br /><img src="img/919-DNS-PROBE-NXDOMAIN.png"><br/><br/>
+    The <b>ONLY</b> I've found was this method. Changing my DNS on a router level didn't solve anything. And this is just a temporary fix -- it gets reseted everytime you reboot. So bookmark this page...
+    <br/>
+    First of you need to open up your preferred terminal. Then you need to type this in (or copy/paste):<br /><br />
+    <div class="code2">
+    <div class="code" onclick="copyDivToClipboard" id="a">
+      <pre>sudo nano /etc/resolv.conf</pre>
+    </div>
+        <div onclick="copyDivToClipboard()"><button class="code-button">Click to copy</button></div></div>
+        <script>
+            function copyDivToClipboard() {
+                var range = document.createRange();
+                range.selectNode(document.getElementById("a"));
+                window.getSelection().removeAllRanges(); // clear current selection
+                window.getSelection().addRange(range); // to select text
+                document.execCommand("copy");
+                window.getSelection().removeAllRanges();// to deselect
+            }
+        </script><br />
+        Then before any <span class="simplecode">nameserver</span> entry type these three lines in:<br /><br />
+        <div class="code2">
+        <div class="code" onclick="copyDivToClipboard2" id="a2">
+          <pre>nameserver 8.8.8.8
+nameserver 208.67.222.222
+nameserver 4.2.2.2</pre>
+        </div>
+            <div onclick="copyDivToClipboard2()"><button class="code-button">Click to copy</button></div></div>
+            <script>
+                function copyDivToClipboard2() {
+                    var range = document.createRange();
+                    range.selectNode(document.getElementById("a2"));
+                    window.getSelection().removeAllRanges(); // clear current selection
+                    window.getSelection().addRange(range); // to select text
+                    document.execCommand("copy");
+                    window.getSelection().removeAllRanges();// to deselect
+                }
+            </script>
+            <br />Save and refresh the page (you might need to press <span class="simplecode">Ctrl</span> + <span class="simplecode">Shift</span> + <span class="simplecode">R</span> for it to work).
+            <br /><br />Again I'll say this again: <b>This will reset everytime you reboot.</b>. I do not know of a better solution. Sorry.<br /><br />
+      </div>
+  <br /><br />
+  <div class="bottombar">
+    <li class="navbar-li"><a href="../index.html" class="navbar-li-a">Home</a></li>
+  </div>
+ </body>
+ </script>
+</html>
